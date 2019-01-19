@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CALCULADORA CON BootStrap</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/png" href="imagenes/favicon.ico" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+
+<script language="javascript" type="text/javascript" src="js/Calculadora.js"></script>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="fondo">			
+
+			<input type="text" class="resultados" id="pantalla">	
+
+
+			<div id="cal_avanzada" class="calculadora_avanzada">
+
+				<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">(</button>
+				<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">)</button>
+				<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">x2</button>
+				<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">√</button>
+
+			</div>
+
+			<div id="cal_conversor" class="calculadora_conversor">
+
+
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo2">BIN</button>
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo2">DEC</button>
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo2">HEX</button> || 
+
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">€</button>
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">£</button>
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">$</button>
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">$X</button>
+						<button type="button" class="btn botones_calculadora_avanzada_y_conversor_tipo1">¥</button>
+							
+			</div>
+
+			<div class="calculadora_basica">
+
+				<button onclick="avanzada()" type="button" id="avanzada" class="botones_toggle_calculadora_avanzada_y_conversor">AV</button>
+				<button onclick="conversor()" type="button" id="conversor" class="botones_toggle_calculadora_avanzada_y_conversor">CON</button>
+				<button type="button" class="btn">CE</button>				
+				<button type="button" class="btn boton_igual">/</button>
+
+				<br>
+
+				<button type="button" class="btn">7</button>
+				<button type="button" class="btn">8</button>
+				<button type="button" class="btn">9</button>
+				<button type="button" class="btn boton_igual">x</button>
+				
+
+				<br>
+
+				<button type="button" class="btn">4</button>
+				<button type="button" class="btn">5</button>
+				<button type="button" class="btn">6</button>
+				<button type="button" class="btn boton_igual">-</button>
+		
+
+				<br>
+
+				<button type="button" class="btn">1</button>
+				<button type="button" class="btn">2</button>
+				<button type="button" class="btn">3</button>			
+				<button type="button" class="btn boton_igual">+</button>
+			
+
+				<br>					    	       
+
+				<button type="button" class="btn">0</button>
+				<button type="button" class="btn">,</button>
+				<button type="button" class="btn">DEL</button>
+				<button type="button" class="btn boton_igual">=</button>
+				
+
+				<br>
+
+				<img id="boton_on" class="boton_on_off" alt="" src="imagenes/rojo.png" onmouseover="this.style.cursor='pointer'" onclick="cambia_imagen(),encender()"/>			
+
+
+				<br>
+			
+			</div>
+		</div>
+
+	</div>
+
+<!-- JS PURO -->
+
+
+<!-- JS ABRE CALCULADORA AVANZADA -->
+
+<script language="javascript" type="text/javascript">
+    function cambia_imagen() {
+        var img = document.getElementById('boton_on').src;
+        if (img.indexOf('imagenes/rojo.png')!=-1) {
+            document.getElementById('boton_on').src  = 'imagenes/verde.png';
+        }
+         else {
+           document.getElementById('boton_on').src = 'imagenes/rojo.png';
+       }
+
+    }
+</script>
+
+
+</script>
+
+<script type="text/javascript">
+var flag =1; //Aqui creo una variable boolean
+var style = document.getElementById('avanzada');  //Aqui creo una variable para cambio de estilo
+function avanzada() {
+	if (flag==1){ //Si es 1 lo muestra
+		document.getElementById('cal_avanzada').style.display="block"; // Aparece calculadora avanzada
+		flag=0; // Aqui le decimos que cuando pinchemos de nuevo, vuelva al estado inicial
+		style.classList.add('botones_toggle_calculadora_avanzada_y_conversor_activados'); //  Cambia el estilo del boton 
+	
+	} else {
+		document.getElementById('cal_avanzada').style.display="none"; // Desaparece calculadora avanzada
+		flag=1;
+		style.classList.remove('botones_toggle_calculadora_avanzada_y_conversor_activados'); // Vuelve al estilo inicial del boton 	
+	}
+}
+
+</script>
+
+<!-- JS ABRE CALCULADORA CONVERSOR -->
+
+<script>
+    function conversor() {
+        var show_hide = document.getElementById('cal_conversor'); // aqui creo la variable para asignarla al div cal_conversor
+        var style = document.getElementById('conversor'); // aqui creo la variable para asignarla al boton C.moneda con id=conversor
+        if (show_hide.style.display == 'block') {  // Aqui comprobamos cuál es el estado del elemento, si está visible, al hacer click lo ocula y tambien vuelve al estilo inicial 
+            show_hide.style.display = 'none';
+            style.classList.remove('botones_toggle_calculadora_avanzada_y_conversor_activados'); //  Cambia el estilo del boton       
+        }  else { // pero si esta oculto, lo mostrara y aplicara el nuevo estilo para el fondo (en este caso, lo pone de color verde)
+            show_hide.style.display = 'block';
+            style.classList.add('botones_toggle_calculadora_avanzada_y_conversor_activados');   
+        }
+    }
+</script>
+
+<!-- JS TOGGLE PARA CAMBIAR COLOR DEL BOTON ON AL HACER CLICK EN EL, Y PARA CAMBIAR COLOR DE LA PANTALLA AL HACER TABIEN CLICK EN EL BOTON ON -->
+
+<script type="text/javascript">
+function encender() {
+  document.getElementById("pantalla").classList.toggle("pantalla_activada");
+  document.getElementById("pantalla").classList.toggle("pantalla");
+}
+
+</script>
+
+<!-- pruebas de script
+
+
+<script>
+
+  var style = document.getElementById("boton_on_off").classList;
+  var style_pantalla = document.getElementById("pantalla").classList;
+
+	function encender() {
+
+
+
+  if (style.contains("botones_toggle_calculadora_avanzada_y_conversor")||style_pantalla.contains("pantalla")) { //AQUI comprueba el la class qe tiene asignada y si es la misma, la sustituye por otra nueva class
+    style.remove("botones_toggle_calculadora_avanzada_y_conversor");
+    style_pantalla.remove("pantalla");
+  } else {
+    style.add("botones_toggle_calculadora_avanzada_y_conversor");
+    style_pantalla.add("pantalla");
+  }
+  if (style.contains("botones_toggle_calculadora_avanzada_y_conversor_activados")||style_pantalla.contains("pantalla_activada1")) {
+    style.remove("botones_toggle_calculadora_avanzada_y_conversor_activados");
+     style_pantalla.remove('pantalla_activada1');
+  } else {
+    style.add("botones_toggle_calculadora_avanzada_y_conversor_activados");
+    style_pantalla.add('pantalla_activada1');
+  }
+}
+
+   
+</script>
+-->
+
+
+
+<!--
+
+<script type="text/javascript">
+// Script to hide/show menu
+var button = document.querySelector('#conversor');
+var menu = document.querySelector('#cal_conversor');
+button.addEventListener('click', function (event) {
+      if (menu.style.display == "") {
+          menu.style.display = "none";
+          button.innerHTML = "Hide C.moneda";
+      } else {
+          menu.style.display = "";
+          button.innerHTML = "Show C.moneda";
+      }
+    }
+  );
+</script>
+
+-->
+
+<!-- PARA USARLO CON LIBRERIA JQUERY
+
+<script>
+$(document).ready(function(){
+  $("#conversor").click(function(){
+    $(".boton_calculadora_conversor").toggleClass("boton_calculadora_conversor_activado");
+  });
+});
+</script>
+
+-->
+
+<!-- PARA USARLO CON LIBRERIA JQUERY
+<script>
+$(document).ready(function(){
+  $("#avanzada").click(function(){
+    $(".calculadora_avanzada").style.fontSize(120);
+  });
+  $("#avanzada").click(function(){
+    $(".calculadora_avanzada").show();
+  });
+});
+</script>
+
+-->
+
+</body>
+</html>

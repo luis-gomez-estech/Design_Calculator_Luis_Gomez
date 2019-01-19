@@ -1,0 +1,200 @@
+body {
+  background: #111 !important;
+}
+
+.container {
+    max-width:520px !important;
+    margin:20px auto 10px;
+}
+
+p {
+  color: #fff;
+}
+
+.fondo {
+  background: #222;
+  padding: 15px 8px 8px 8px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#pantalla {
+  width: 280px !important;
+  margin: 20px 0px 20px 0px;  
+  height:80px;
+  color:#c0c0c0;
+  text-align: right;
+  font-size: 3em;
+  letter-spacing: 2px;
+  border-radius:7px;
+  box-shadow:inset rgba(0,0,0,9) 1px 1px 14px;    
+  background: #3e3e3e;
+}
+
+.pantalla_activada {
+background-color:  #00fff3  !important;
+  color: #000 !important;
+}
+
+
+.btn {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#c0c0c0 !important;
+  font-size:14px !important;
+  background:#2f2f2f !important;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #000 1px solid !important;
+  border-radius:5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color:  #05f7e5  !important;
+  background:#2a2a2a !important;
+  
+}
+
+.btn-xs {
+    width: 110px;
+}
+
+.boton_on_off {
+  width: 50px;
+  height:50px;
+  margin-top: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.boton_igual {
+  background: #111 !important;
+  border: 1px solid #fff !important;
+  font-size: 18px !important;
+}
+
+.botones_toggle_calculadora_avanzada_y_conversor {
+  font-family: "Myriad Pro", Arial, sans-serif;
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#000 !important;
+  font-size:14px !important;
+  background:  #FF5733  !important;
+  border: #000 1px solid !important;
+  border-radius:10px;
+  text-align: center;
+  cursor: pointer;
+
+
+}
+
+.botones_toggle_calculadora_avanzada_y_conversor:hover {
+  color: #000 !important;
+  background-color: #0ce160 !important;
+}
+
+.botones_toggle_calculadora_avanzada_y_conversor_activados {
+  background-color: #0ce160 !important;
+  color: #000 !important;
+}
+
+.calculadora_avanzada {
+  display: none;
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+  padding: 2px;
+}
+
+
+@media screen and (max-width: 768px) {
+.calculadora_avanzada {
+margin: 0px 10px 20px 10px;
+}   
+}
+
+.calculadora_conversor {
+display: none;
+text-align: center;
+font-size: 10px;
+padding: 2px;
+margin-bottom: 10px;
+color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+.calculadora_conversor {
+margin: 0px 10px 20px 10px;
+}   
+}
+
+/* Estilo de todos los botones de la opcion Avanzada y Conversor a excepcion de los botones BIN, DEC y HEX */
+.botones_calculadora_avanzada_y_conversor_tipo1 {
+  display:none;
+  text-align: center;
+  width: 40px;
+  height:40px;
+  color:  #05f7e5  !important;
+  background:#444 !important;
+  border: #fff 1px solid !important;
+  font-size: 10px !important;
+}
+
+/* Estilo de los botones BIN, DEC y HEX */
+.botones_calculadora_avanzada_y_conversor_tipo2 {
+  text-align: center;
+  width: 50px;
+  height:40px;
+  color:  #05f7e5  !important;
+  background:#444 !important;
+  border: #fff 1px solid !important;
+  font-size: 10px !important;
+}
+
+.calculadora_basica2 {
+  display: none !important;
+}
+
+/* 
+
+
+.boton_on {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  color:#c0c0c0 !important;
+  font-size:12px !important;
+  border: #000 1px solid !important;
+  border-radius:150px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(241, 13, 13,0.2) !important;
+}
+
+.boton_on_activado {
+  background: #0ce160 !important;
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#000 !important;
+  font-size:12px !important;
+  border: #fff 2px solid !important;
+  border-radius:5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.botones_calculadora_avanzada_y_conversor_tipo1_activado {
+  display: block !important;
+ 
+}
+
+ */
+
+
+
+
